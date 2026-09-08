@@ -1,0 +1,106 @@
+15:10:15 B        Log System: Log System Initialized.
+15:10:15 G        ServerInit: Log settings loaded from ../etc/log.ini
+15:10:15 G        ServerInit: Loading Server Configuration from ../etc/eve-server.xml.
+15:10:15 E XMLParser: Unknown element 'UseBeanCount' at line 41.
+15:10:15 E XMLParser: Unknown element 'UseStackTrace' at line 42.
+15:10:15 E XMLParser: Unknown element 'StackTrace' at line 45.
+15:10:15 E XMLParser: Unknown element 'UseMarketBot' at line 50.
+15:10:15 E XMLParser: Unknown element 'bpTimes' at line 135.
+15:10:15 E XMLParser: Unknown element 'marketBotSettings' at line 279.
+15:10:15 L  Supported Client:  EVE-EVE-TRANQUILITY@ccp
+15:10:15 L    Client Version:  7.31
+15:10:15 L      Client Build:  360229
+15:10:15 L          MachoNet:  320
+15:10:15 L   Server Revision:  0.8.6-master-f55b488
+15:10:15 L        Build Date:  Sep  7 2026
+15:10:15 L    Config Version:  10.3
+15:10:15 L       Log Version:  10.5
+15:10:15 L TraderJoe Version:  0.15
+15:10:15 L  Missions Version:  0.31
+15:10:15 L      Scan Version:  0.43
+15:10:15 L    NPC AI Version:  0.57
+15:10:15 L  Drone AI Version:  0.15
+15:10:15 L    Civ AI Version:  0.10
+15:10:15 L Sentry AI Version:  0.10
+15:10:15 L    POS AI Version:  0.01
+15:10:15 G        ServerInit: Found log directory ../logs/
+15:10:15 G        ServerInit: Server Configuration Files Loaded.
+15:10:15 B      ServerConfig: Main Loop Settings
+15:10:15 G   Loop Sleep Time: Default at 10ms.
+15:10:15 B      ServerConfig: World Switches
+15:10:15 G      Save on Move: Enabled.
+15:10:15 G    Save on Update: Enabled.
+15:10:15 G     Docking Delay: Enabled.
+15:10:15 G    Grid Unloading: Enabled.  Grids will unload after 300 seconds of inactivity.
+15:10:15 B      ServerConfig: Rate Modifiers
+15:10:15 G         SecStatus: Normal.
+15:10:15 G           Bountys: Normal.
+15:10:15 G        Item Drops: Normal.
+15:10:15 G     Salvage Drops: Normal.
+15:10:15 G       Isk Rewards: Normal.
+15:10:15 G       All Damages: Normal.
+15:10:15 G        Turret Dmg: Normal.
+15:10:15 G        Turret ROF: Normal.
+15:10:15 G       Missile Dmg: Normal.
+15:10:15 G       Missile ROF: Normal.
+15:10:15 G      Missile Time: Normal.
+15:10:15 B      ServerConfig: R.A.M. Rate Modifiers
+15:10:15 G  PE Research Time: Normal.
+15:10:15 G  ME Research Time: Normal.
+15:10:15 G Material Modifier: Normal.
+15:10:15 G         Copy Time: Normal.
+15:10:15 G   Production Time: Normal.
+15:10:15 G    Invention Time: Normal.
+15:10:15 G           RE Time: Normal.
+15:10:15 G    Waste Modifier: Normal.
+15:10:15 B      ServerConfig: Critical Hit Chances
+15:10:15 G            Player: Normal at 2%.
+15:10:15 G               NPC: Normal at 1.5%.
+15:10:15 G            Sentry: Normal at 2%.
+15:10:15 G             Drone: Normal at 3%.
+15:10:15 G           Concord: Normal at 5%.
+15:10:15 B      ServerConfig: Feature Switches
+15:10:15 W     RAM AutoEvent: Disabled.
+15:10:15 G   Module Auto-Off: Enabled.
+15:10:15 G   DScan Asteroids: Enabled.
+15:10:15 W        Cargo Mass: Disabled.
+15:10:15 W Bumping Mechanics: Disabled.
+15:10:15 W Keep Old Missions: Disabled.
+15:10:15 G     Player Drones: Enabled.
+15:10:15 W         Ship Heat: Disabled.
+15:10:15 G         PI System: Enabled.
+15:10:15 G    Anomaly System: Enabled.
+15:10:15 G    Dungeon System: Enabled.
+15:10:15 G    Asteroid Belts: Enabled.
+15:10:15 W     Static Spawns: Disabled.
+15:10:15 G    Roaming Spawns: Enabled.  Checks every 5 minutes
+15:10:15 G    Spawns Enabled: Respawn timer checks every 5 minutes
+15:10:15 W  Delayed Bounties: Delayed Bounties are Disabled.  Bounty payouts are immediate.
+15:10:16 W  Delayed Bounties: Delayed Bounties are Disabled.  Fleet Sharing of Bounties is immediate.
+15:10:16 B      ServerConfig: Misc Switches
+15:10:16 G     Module Damage: Enabled.  Set to 10% chance.
+15:10:16 G       Decay Timer: Enabled.  Checks every 120 minutes
+15:10:16 G    Market Bot Mgr: TraderJoe is Enabled.
+15:10:16 G        ServerInit: Starting Market Bot Manager
+15:10:16 B  MarketBotDataMgr: Market Bot Data Manager Initialized.
+15:10:16 C      MarketBotMgr: Timer initialized. First automated cycle will run in 15 minutes.
+15:10:16 B      MarketBotMgr: Market Bot Manager Initialized.
+15:10:16 B      ServerConfig: Debug Switches
+15:10:16 E      ServerConfig: Test Server Enabled
+15:10:16 W        StackTrace: Disabled
+15:10:16 W  Server Profiling: Disabled.
+15:10:16 W      BeanCounting: Disabled.
+15:10:16 W        Spawn Test: Disabled.
+15:10:16 W   Bubble Tracking: Disabled.
+15:10:16 W     Ship Tracking: Disabled.
+15:10:16 W     Position Hack: Disabled.
+15:10:16 G        ServerInit: Starting TCP Server
+15:10:16 B     BaseTCPServer: TCP Server started on port 26000.
+15:10:16 G        ServerInit: Connecting to DataBase
+15:10:16 C           DB User:  database_username
+15:10:16 C          DataBase:  database_name
+15:10:16 C         DB Server:  database_host:0
+15:10:16 C     Connect Flags:  2
+15:10:16 G  DataBase Manager: DataBase AutoReconnect Enabled
+15:10:18 E        ServerInit: Unable to connect to the database: #2005: Unknown server host 'database_host' (11001)
+15:10:18 B  DataBase Manager: DataBase Manager Initialized
