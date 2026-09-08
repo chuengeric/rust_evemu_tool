@@ -37,6 +37,7 @@ use std::io::Write;
 
 
 mod background;
+mod world_state; 
 
 // ---------- 页面枚举 ----------
 #[derive(PartialEq)]
@@ -246,6 +247,9 @@ struct MyApp {
     pos_list: Vec<POS>,
     corporations: Vec<Corporation>,
 
+    // Worlds
+    world_manager: Arc<world_state::WorldStateManager>,
+
     // Channels
     tx_accounts: mpsc::Sender<Vec<Account>>,
     rx_accounts: mpsc::Receiver<Vec<Account>>,
@@ -275,6 +279,34 @@ impl MyApp {
         let (tx_sq, rx_sq) = mpsc::channel();
         let (tx_cn, rx_cn) = mpsc::channel();
         let (tx_lp, rx_lp) = mpsc::channel();
+
+        // Worlds ()
+        /**
+        EVEmu 数据库表：
+
+mapSolarSystems：星系信息（systemID, systemName, regionID, security 等）
+mktOrders：市场订单（orderID, typeID, regionID, price, volRemaining, bid 等）
+entity 或 account 中的 online 字段可统计在线玩家（但那是玩家，不是星系）
+主权信息可能在 sov 相关表中（如 sovData）
+        */
+        // 使用真实数据库（与 account 一致）
+        // let provider = world_state::DatabaseProvider::new(pool.clone());
+        // 初始化世界状态管理器（使用真实数据库）
+        let provider = world_state::DatabaseProvider::new(pool.clone());
+        let manager = Arc::new(world_state::WorldStateManager::new(Box::new(provider)));
+        let mgr_clone = manager.clone();
+        tokio::spawn(async move {
+            mgr_clone.force_update().await;
+        });
+        let mgr_clone2 = manager.clone();
+        tokio::spawn(async move {
+            mgr_clone2.start_background_updater().await;
+        });
+        // 如果编译调试版本想用模拟，可条件编译
+        // #[cfg(debug_assertions)]
+        // let provider = world_state::SimulationProvider;
+        // #[cfg(not(debug_assertions))]
+        // let provider = world_state::DatabaseProvider::new(pool.clone());
 
         Self {
             pool,
@@ -339,6 +371,8 @@ impl MyApp {
             missions: Vec::new(),
             pos_list: Vec::new(),
             corporations: Vec::new(),
+            // worlds
+            world_manager: manager,
         }
     }
 
